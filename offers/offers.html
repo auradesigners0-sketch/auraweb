@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aura Web Designers - We serve industries where trust, presentation, and precision are non-negotiable.">
+    <title>Offers | Aura Web Designers</title>
+    <link rel="stylesheet" href="offers.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="hero-header">
+        <nav class="navigation">
+            <a href="index.html" class="brand">
+                <img src="../images/logo.png" alt="Aura Logo" class="brand-logo">
+            </a>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+            </button>
+            
+            <div class="nav-container" id="nav-container">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../about/about.html" class="nav-link">About</a></li>
+                    <li><a href="../services/services.html" class="nav-link">Services</a></li>
+                    <li><a href="offers.html" class="nav-link active">Offers</a></li>
+                    <li><a href="../contact/contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <!-- Close Button for Mobile -->
+                <button class="close-menu-btn" id="close-menu-btn" aria-label="Close navigation">
+                    <span class="close-icon"></span>
+                    <span class="close-icon"></span>
+                </button>
+            </div>
+        </nav>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Offers</h1>
+            <p class="hero-subtitle">Industries where trust, presentation, and precision are non-negotiable</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Offers Section -->
+        <section class="offers-section-alt">
+            <div class="container">
+                <div class="offers-intro">
+                    <p class="offers-description">We serve industries where trust, presentation, and precision are non-negotiable.</p>
+                </div>
+                
+                <div class="offers-showcase">
+                    <div class="offer-item">
+                        <div class="offer-number">01</div>
+                        <div class="offer-content">
+                            <h3 class="offer-name">Engineering Companies</h3>
+                            <p class="offer-text">Showcasing innovation with clarity and authority</p>
+                        </div>
+                        <div class="offer-line"></div>
+                    </div>
+                    
+                    <div class="offer-item">
+                        <div class="offer-number">02</div>
+                        <div class="offer-content">
+                            <h3 class="offer-name">Hotels & Catering & Restaurants</h3>
+                            <p class="offer-text">Immersive digital experiences that evoke taste and atmosphere</p>
+                        </div>
+                        <div class="offer-line"></div>
+                    </div>
+                    
+                    <div class="offer-item">
+                        <div class="offer-number">03</div>
+                        <div class="offer-content">
+                            <h3 class="offer-name">Schools & Universities</h3>
+                            <p class="offer-text">Platforms that inspire learning and trust</p>
+                        </div>
+                        <div class="offer-line"></div>
+                    </div>
+                    
+                    <div class="offer-item">
+                        <div class="offer-number">04</div>
+                        <div class="offer-content">
+                            <h3 class="offer-name">Apartments & Renting Offices</h3>
+                            <p class="offer-text">Elegant property showcases that convert interest into occupancy</p>
+                        </div>
+                        <div class="offer-line"></div>
+                    </div>
+                    
+                    <div class="offer-item">
+                        <div class="offer-number">05</div>
+                        <div class="offer-content">
+                            <h3 class="offer-name">Churches & social organizations</h3>
+                            <p class="offer-text">Churches and Ministries, NGOs and Social Impact Organizations, 
+                              Community Outreach Programs, Spiritual Retreats and Healing Spaces</p>
+                        </div>
+                        <div class="offer-line"></div>
+                    </div>
+
+                     <div class="offer-item">
+                        <div class="offer-number">06</div>
+                        <div class="offer-content">
+                            <h3 class="offer-name">Other Categories</h3>
+                            <p class="offer-text">From law firms to luxury retail, we tailor prestige-first solutions for every high-value sector</p>
+                        </div>
+                        <div class="offer-line"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../images/logo.png" alt="Aura Logo">
+                </div>
+                <div class="footer-tagline">
+                    <p>Aura — Architects of Prestige. Designers of Legacy.</p>
+                </div>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="../services/services.html">Services</a></li>
+                        <li><a href="../offers/offers.html">Offers</a></li>
+                        <li><a href="../contact/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aura Web Designers. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const navContainer = document.getElementById('nav-container');
+            
+            // Open mobile menu
+            mobileMenuBtn.addEventListener('click', function() {
+                navContainer.classList.add('active');
+                mobileMenuBtn.classList.add('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            });
+            
+            // Close mobile menu
+            closeMenuBtn.addEventListener('click', function() {
+                navContainer.classList.remove('active');
+                mobileMenuBtn.classList.remove('hidden');
+                document.body.style.overflow = ''; // Enable scrolling
+            });
+            
+            // Close menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navContainer.classList.remove('active');
+                    mobileMenuBtn.classList.remove('hidden');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (navContainer.classList.contains('active') && 
+                    !navContainer.contains(event.target) && 
+                    !mobileMenuBtn.contains(event.target)) {
+                    navContainer.classList.remove('active');
+                    mobileMenuBtn.classList.remove('hidden');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

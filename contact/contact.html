@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Aura Web Designers to begin your legacy. We craft digital sanctuaries for brands ready to elevate, evolve, and leave a lasting impact.">
+    <title>Contact | Aura Web Designers</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="hero-header">
+        <nav class="navigation">
+            <a href="../index.html" class="brand">
+                <img src="../images/logo.png" alt="Aura Logo" class="brand-logo">
+            </a>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+                <span class="hamburger-icon"></span>
+            </button>
+            
+            <div class="nav-container" id="nav-container" aria-hidden="true">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../about/about.html" class="nav-link">About</a></li>
+                    <li><a href="../services/services.html" class="nav-link">Services</a></li>
+                    <li><a href="../offers/offers.html" class="nav-link">Offers</a></li>
+                    <li><a href="../contact/contact.html" class="nav-link active" aria-current="page">Contact</a></li>
+                </ul>
+                
+                <!-- Close Button for Mobile -->
+                <button class="close-menu-btn" id="close-menu-btn" aria-label="Close navigation">
+                    <span class="close-icon"></span>
+                    <span class="close-icon"></span>
+                </button>
+            </div>
+        </nav>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Begin Your Legacy</h1>
+            <p class="hero-subtitle">Let's build something timeless</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Introduction Section -->
+        <section class="intro-section">
+            <div class="container">
+                <div class="intro-content">
+                    <p class="intro-text">Aura isn't just a web design studio. We're a digital sanctuary for brands ready to elevate, evolve, and leave a legacy. If you're seeking a platform that reflects your excellence, we'd love to hear from you.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-form-section">
+            <div class="container">
+                <h2 class="section-title">Request a Private Consultation</h2>
+                <p class="form-intro">We tailor every project to the emotional, strategic, and operational needs of our clients. To begin, tell us a little about your vision:</p>
+                
+                <!-- Netlify Form -->
+                <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                    <!-- Hidden field for Netlify bot detection -->
+                    <input type="hidden" name="form-name" value="contact">
+                    <p class="hidden">
+                        <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                    </p>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required aria-required="true">
+                            <span class="error-message" id="name-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Your Company / Brand Name</label>
+                            <input type="text" id="company" name="company" required aria-required="true">
+                            <span class="error-message" id="company-error"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="industry">Industry</label>
+                            <select id="industry" name="industry" required aria-required="true">
+                                <option value="">Select Industry</option>
+                                <option value="Companies">Companies</option>
+                                <option value="hotels, Catering & Restaurants">Hotels, Catering & Restaurants</option>
+                                <option value="Schools & Universities">Schools & Universities</option>
+                                <option value="church & social organization">Church & Social Organization</option>
+                                <option value="Apartment & Renting Offices">Apartment & Renting Offices</option>
+                                <option value="supermarkets & traders">Supermarkets & Traders</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message" id="industry-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required aria-required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                            <span class="error-message" id="email-error"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number (optional)</label>
+                            <input type="tel" id="phone" name="phone" pattern="[+]?[0-9\s\-\(\)]+">
+                            <span class="error-message" id="phone-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="tone">Preferred Tone</label>
+                            <select id="tone" name="tone" required aria-required="true">
+                                <option value="">Select Tone</option>
+                                <option value="elegant">Elegant</option>
+                                <option value="bold">Bold</option>
+                                <option value="minimalist">Minimalist</option>
+                                <option value="spiritual">Spiritual</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message" id="tone-error"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="legacy">What legacy are you building?</label>
+                        <textarea id="legacy" name="legacy" rows="4" required aria-required="true"></textarea>
+                        <span class="error-message" id="legacy-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Website Goals</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="branding" name="goals" value="branding">
+                                <label for="branding">Branding</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="lead-generation" name="goals" value="lead-generation">
+                                <label for="lead-generation">Lead Generation</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="online-booking" name="goals" value="online-booking">
+                                <label for="online-booking">Online Booking</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="portfolio" name="goals" value="portfolio">
+                                <label for="portfolio">Portfolio</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="hosting" name="goals" value="hosting">
+                                <label for="hosting">Hosting</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="other-goals" name="goals" value="other">
+                                <label for="other-goals">Other</label>
+                            </div>
+                        </div>
+                        <span class="error-message" id="goals-error"></span>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="budget">Budget Range</label>
+                            <select id="budget" name="budget" required aria-required="true">
+                                <option value="">Select Budget</option>
+                                <option value="TZS 400,000">TZS 400,000-550,000</option>
+                                <option value="TZS 550,000">TZS 550,000-700,000</option>
+                                <option value="TZS 700,000">TZS 700,000-900,000</option>
+                                <option value="TZS 1M+">TZS 1M+</option>
+                            </select>
+                            <span class="error-message" id="budget-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="timeline">Timeline</label>
+                            <select id="timeline" name="timeline" required aria-required="true">
+                                <option value="">Select Timeline</option>
+                                <option value="1-2-weeks">1–2 weeks</option>
+                                <option value="2-4-weeks">2–4 weeks</option>
+                                <option value="1-2-months">1–2 months</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                            <span class="error-message" id="timeline-error"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="cta-button" id="submit-btn">Begin Your Legacy</button>
+                        <div class="loading-spinner" id="loading-spinner" style="display: none;">
+                            <div class="spinner"></div>
+                            <p>Processing your request...</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Direct Contact Section -->
+        <section class="direct-contact-section">
+            <div class="container">
+                <h2 class="section-title">Prefer a Direct Conversation?</h2>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <a href="mailto:auradesigners0@gmail.com" ><p> <i class="fa fa-facebook"></i></p></a>
+                        </div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:auradesigners0@gmail.com" aria-label="Send email to Aura Web Designers">auradesigners0@gmail.com</a></p>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <h3>Phone</h3>
+                        <p><a href="tel:+255613400250" aria-label="Call Aura Web Designers">WhatsApp only</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media Section -->
+        <section class="social-section">
+            <div class="container">
+                <h2 class="section-title">Follow Our Journey</h2>
+                <p class="social-intro">Stay inspired by our latest work, insights, and visual storytelling:</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/company/aurawebdesigners" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Follow Aura Web Designers on LinkedIn">
+                        <div class="social-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </div>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://instagram.com/aurawebdesigners?igsh=YzljYTk10Dg3Zg==" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Follow Aura Web Designers on Instagram">
+                        <div class="social-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </div>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://dribbble.com/aurawebdesigners" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Follow Aura Web Designers on Dribbble">
+                        <div class="social-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8.56 14.68c.95-1.28 2.2-2.09 3.56-2.09s2.61.81 3.56 2.09"></path>
+                                <path d="M12 20s4-5.33 4-9a4 4 0 0 0-8 0c0 3.67 4 9 4 9z"></path>
+                            </svg>
+                        </div>
+                        <span>Dribbble</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../images/logo.png" alt="Aura Logo">
+                </div>
+                <div class="footer-tagline">
+                    <p>Aura — Architects of Prestige. Designers of Legacy.</p>
+                </div>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="../services/services.html">Services</a></li>
+                        <li><a href="../offers/offers.html">Offers</a></li>
+                        <li><a href="../contact/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aura Web Designers. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const navContainer = document.getElementById('nav-container');
+            const contactForm = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const loadingSpinner = document.getElementById('loading-spinner');
+            
+            // Open mobile menu
+            mobileMenuBtn.addEventListener('click', function() {
+                navContainer.classList.add('active');
+                mobileMenuBtn.classList.add('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                navContainer.setAttribute('aria-hidden', 'false');
+            });
+            
+            // Close mobile menu
+            closeMenuBtn.addEventListener('click', function() {
+                navContainer.classList.remove('active');
+                mobileMenuBtn.classList.remove('hidden');
+                document.body.style.overflow = ''; // Enable scrolling
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                navContainer.setAttribute('aria-hidden', 'true');
+            });
+            
+            // Close menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navContainer.classList.remove('active');
+                    mobileMenuBtn.classList.remove('hidden');
+                    document.body.style.overflow = '';
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    navContainer.setAttribute('aria-hidden', 'true');
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (navContainer.classList.contains('active') && 
+                    !navContainer.contains(event.target) && 
+                    !mobileMenuBtn.contains(event.target)) {
+                    navContainer.classList.remove('active');
+                    mobileMenuBtn.classList.remove('hidden');
+                    document.body.style.overflow = '';
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    navContainer.setAttribute('aria-hidden', 'true');
+                }
+            });
+            
+            // Form validation
+            function validateForm() {
+                let isValid = true;
+                
+                // Clear previous error messages
+                const errorMessages = document.querySelectorAll('.error-message');
+                errorMessages.forEach(msg => msg.textContent = '');
+                
+                // Validate name
+                const name = document.getElementById('name');
+                if (!name.value.trim()) {
+                    document.getElementById('name-error').textContent = 'Please enter your name';
+                    isValid = false;
+                }
+                
+                // Validate company
+                const company = document.getElementById('company');
+                if (!company.value.trim()) {
+                    document.getElementById('company-error').textContent = 'Please enter your company name';
+                    isValid = false;
+                }
+                
+                // Validate industry
+                const industry = document.getElementById('industry');
+                if (!industry.value) {
+                    document.getElementById('industry-error').textContent = 'Please select an industry';
+                    isValid = false;
+                }
+                
+                // Validate email
+                const email = document.getElementById('email');
+                const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!email.value.trim()) {
+                    document.getElementById('email-error').textContent = 'Please enter your email address';
+                    isValid = false;
+                } else if (!emailPattern.test(email.value)) {
+                    document.getElementById('email-error').textContent = 'Please enter a valid email address';
+                    isValid = false;
+                }
+                
+                // Validate phone (optional but if provided, should be valid)
+                const phone = document.getElementById('phone');
+                const phonePattern = /^[+]?[0-9\s\-\(\)]+$/;
+                if (phone.value.trim() && !phonePattern.test(phone.value)) {
+                    document.getElementById('phone-error').textContent = 'Please enter a valid phone number';
+                    isValid = false;
+                }
+                
+                // Validate tone
+                const tone = document.getElementById('tone');
+                if (!tone.value) {
+                    document.getElementById('tone-error').textContent = 'Please select a preferred tone';
+                    isValid = false;
+                }
+                
+                // Validate legacy
+                const legacy = document.getElementById('legacy');
+                if (!legacy.value.trim()) {
+                    document.getElementById('legacy-error').textContent = 'Please describe the legacy you are building';
+                    isValid = false;
+                }
+                
+                // Validate goals (at least one checkbox should be checked)
+                const goals = document.querySelectorAll('input[name="goals"]:checked');
+                if (goals.length === 0) {
+                    document.getElementById('goals-error').textContent = 'Please select at least one goal';
+                    isValid = false;
+                }
+                
+                // Validate budget
+                const budget = document.getElementById('budget');
+                if (!budget.value) {
+                    document.getElementById('budget-error').textContent = 'Please select a budget range';
+                    isValid = false;
+                }
+                
+                // Validate timeline
+                const timeline = document.getElementById('timeline');
+                if (!timeline.value) {
+                    document.getElementById('timeline-error').textContent = 'Please select a timeline';
+                    isValid = false;
+                }
+                
+                return isValid;
+            }
+            
+            // Handle form submission
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate form
+                if (!validateForm()) {
+                    // Scroll to the first error
+                    const firstError = document.querySelector('.error-message:not(:empty)');
+                    if (firstError) {
+                        firstError.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    return;
+                }
+                
+                // Show loading spinner
+                submitBtn.style.display = 'none';
+                loadingSpinner.style.display = 'block';
+                
+                // Encode form data for Netlify
+                const formData = new FormData(contactForm);
+                const encodedData = new URLSearchParams();
+                for (const pair of formData) {
+                    encodedData.append(pair[0], pair[1]);
+                }
+                
+                // Submit the form using Netlify
+                fetch('/', {
+                    method: 'POST',
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: encodedData.toString()
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Hide loading spinner
+                        loadingSpinner.style.display = 'none';
+                        
+                        // Show success message
+                        const formContainer = contactForm.parentElement;
+                        const successMessage = document.createElement('div');
+                        successMessage.className = 'success-message';
+                        successMessage.setAttribute('role', 'alert');
+                        successMessage.setAttribute('tabindex', '-1');
+                        successMessage.innerHTML = `
+                            <h3>Thank You</h3>
+                            <p>Your consultation request has been received. We'll be in touch within 24 hours to begin crafting your legacy.</p>
+                        `;
+                        
+                        // Replace form with success message
+                        formContainer.innerHTML = '';
+                        formContainer.appendChild(successMessage);
+                        
+                        // Focus on success message for screen readers
+                        successMessage.focus();
+                        
+                        // Scroll to success message
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        throw new Error('Network response was not ok.');
+                    }
+                })
+                .catch(error => {
+                    // Hide loading spinner
+                    loadingSpinner.style.display = 'none';
+                    submitBtn.style.display = 'inline-block';
+                    
+                    // Show error message
+                    const formContainer = contactForm.parentElement;
+                    const errorMessage = document.createElement('div');
+                    errorMessage.className = 'error-message';
+                    errorMessage.setAttribute('role', 'alert');
+                    errorMessage.innerHTML = `
+                        <h3>Submission Error</h3>
+                        <p>There was a problem submitting your form. Please try again or contact us directly at auradesigners0@gmail.com.</p>
+                    `;
+                    
+                    formContainer.prepend(errorMessage);
+                    
+                    // Scroll to error message
+                    errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    console.error('Form submission error:', error);
+                });
+            });
+            
+            // Real-time validation for email
+            const emailInput = document.getElementById('email');
+            emailInput.addEventListener('blur', function() {
+                const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                const emailError = document.getElementById('email-error');
+                
+                if (this.value.trim() && !emailPattern.test(this.value)) {
+                    emailError.textContent = 'Please enter a valid email address';
+                } else {
+                    emailError.textContent = '';
+                }
+            });
+            
+            // Real-time validation for phone
+            const phoneInput = document.getElementById('phone');
+            phoneInput.addEventListener('blur', function() {
+                const phonePattern = /^[+]?[0-9\s\-\(\)]+$/;
+                const phoneError = document.getElementById('phone-error');
+                
+                if (this.value.trim() && !phonePattern.test(this.value)) {
+                    phoneError.textContent = 'Please enter a valid phone number';
+                } else {
+                    phoneError.textContent = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
