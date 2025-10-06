@@ -9,6 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "h2bxvU7nIshl_AEFm",
+      });
+   })();
+</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -132,7 +142,7 @@
                         <label for="legacy">What legacy are you building?</label>
                         <textarea id="legacy" name="legacy" rows="4" required aria-required="true"></textarea>
                         <span class="error-message" id="legacy-error"></span>
-                    </div>
+                    </div
                     
                     <div class="form-group">
                         <label>Website Goals</label>
@@ -163,7 +173,7 @@
                             </div>
                         </div>
                         <span class="error-message" id="goals-error"></span>
-                    </div>
+                    </div
                     
                     <div class="form-row">
                         <div class="form-group">
@@ -188,7 +198,7 @@
                             </select>
                             <span class="error-message" id="timeline-error"></span>
                         </div>
-                    </div>
+                    </div
                     
                     <div class="form-actions">
                         <button type="submit" class="cta-button" id="submit-btn">Begin Your Legacy</button>
@@ -208,7 +218,7 @@
                 <div class="contact-methods">
                     <div class="contact-method">
                         <div class="contact-icon">
-                            <a href="https://www.instagram.com/aurawebdesigners?igsh=YzljYTk1ODg3Zg==" ><p> <i class="fas fa-instagram"></i></p></a>
+                            <a href="mailto:auradesigners0@gmail.com"><p> <i class="fas fa-envelope"></i></p></a>
                         </div>
                         <h3>Email</h3>
                         <p><a href="mailto:auradesigners0@gmail.com" aria-label="Send email to Aura Web Designers">auradesigners0@gmail.com</a></p>
@@ -313,7 +323,7 @@
             closeMenuBtn.addEventListener('click', function() {
                 navContainer.classList.remove('active');
                 mobileMenuBtn.classList.remove('hidden');
-                document.body.style.overflow = ''; // Enable scrolling
+                document.body.style.overflow = '';
                 mobileMenuBtn.setAttribute('aria-expanded', 'false');
                 navContainer.setAttribute('aria-hidden', 'true');
             });
@@ -435,7 +445,6 @@
                 
                 // Validate form
                 if (!validateForm()) {
-                    // Scroll to the first error
                     const firstError = document.querySelector('.error-message:not(:empty)');
                     if (firstError) {
                         firstError.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -447,70 +456,41 @@
                 submitBtn.style.display = 'none';
                 loadingSpinner.style.display = 'block';
                 
-                // Encode form data for Netlify
+                // Prepare form data
                 const formData = new FormData(contactForm);
-                const encodedData = new URLSearchParams();
-                for (const pair of formData) {
-                    encodedData.append(pair[0], pair[1]);
+                const templateParams = {};
+                
+                // Collect form data
+                for (let [key, value] of formData) {
+                    if (key === 'goals') {
+                        if (!templateParams.goals) templateParams.goals = [];
+                        templateParams.goals.push(value);
+                    } else {
+                        templateParams[key] = value;
+                    }
                 }
                 
-                // Submit the form using Netlify
-                fetch('/', {
-                    method: 'POST',
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: encodedData.toString()
-                })
-                .then(response => {
-                    if (response.ok) {
+                // Send email using EmailJS
+                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        
                         // Hide loading spinner
                         loadingSpinner.style.display = 'none';
+                        submitBtn.style.display = 'inline-block';
                         
                         // Show success message
-                        const formContainer = contactForm.parentElement;
-                        const successMessage = document.createElement('div');
-                        successMessage.className = 'success-message';
-                        successMessage.setAttribute('role', 'alert');
-                        successMessage.setAttribute('tabindex', '-1');
-                        successMessage.innerHTML = `
-                            <h3>Thank You</h3>
-                            <p>Your consultation request has been received. We'll be in touch within 24 hours to begin crafting your legacy.</p>
-                        `;
+                        showSuccessMessage();
+                    }, function(error) {
+                        console.log('FAILED...', error);
                         
-                        // Replace form with success message
-                        formContainer.innerHTML = '';
-                        formContainer.appendChild(successMessage);
+                        // Hide loading spinner
+                        loadingSpinner.style.display = 'none';
+                        submitBtn.style.display = 'inline-block';
                         
-                        // Focus on success message for screen readers
-                        successMessage.focus();
-                        
-                        // Scroll to success message
-                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    } else {
-                        throw new Error('Network response was not ok.');
-                    }
-                })
-                .catch(error => {
-                    // Hide loading spinner
-                    loadingSpinner.style.display = 'none';
-                    submitBtn.style.display = 'inline-block';
-                    
-                    // Show error message
-                    const formContainer = contactForm.parentElement;
-                    const errorMessage = document.createElement('div');
-                    errorMessage.className = 'error-message';
-                    errorMessage.setAttribute('role', 'alert');
-                    errorMessage.innerHTML = `
-                        <h3>Submission Error</h3>
-                        <p>There was a problem submitting your form. Please try again or contact us directly at auradesigners0@gmail.com.</p>
-                    `;
-                    
-                    formContainer.prepend(errorMessage);
-                    
-                    // Scroll to error message
-                    errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    
-                    console.error('Form submission error:', error);
-                });
+                        // Show error message
+                        showError('There was an issue sending your message. Please try again later.');
+                    });
             });
             
             // Real-time validation for email
@@ -538,6 +518,41 @@
                     phoneError.textContent = '';
                 }
             });
+            
+            // Show success message
+            function showSuccessMessage() {
+                const formContainer = contactForm.parentElement;
+                const successMessage = document.createElement('div');
+                successMessage.className = 'success-message';
+                successMessage.setAttribute('role', 'alert');
+                successMessage.setAttribute('tabindex', '-1');
+                successMessage.innerHTML = `
+                    <h3>Thank You!</h3>
+                    <p>Your message has been sent successfully. We'll get back to you soon.</p>
+                `;
+                
+                formContainer.innerHTML = '';
+                formContainer.appendChild(successMessage);
+                
+                successMessage.focus();
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            
+            // Show error message
+            function showError(message) {
+                const formContainer = contactForm.parentElement;
+                const errorMessage = document.createElement('div');
+                errorMessage.className = 'error-message';
+                errorMessage.setAttribute('role', 'alert');
+                errorMessage.innerHTML = `
+                    <h3>Submission Error</h3>
+                    <p>${message}</p>
+                `;
+                
+                formContainer.prepend(errorMessage);
+                
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         });
     </script>
 </body>
